@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/TeraBox/Download/Api/v1/safensecure/fast/Team-X-Og/(.*)",
+      "dest": "app.py"
+    },
+    {
+      "src": "/admin/(.*)",
+      "dest": "app.py"
+    }
+  ],
+  "env": {
+    "ADMIN_SECRET": "superadminsecret",
+    "DB_PATH": "sqlite:///data.db",
+    "PORT": "5000"
+  }
+}
